@@ -1,8 +1,10 @@
-package kapadokia.nyandoro.covidalert;
+package kapadokia.nyandoro.covidalert.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import kapadokia.nyandoro.covidalert.R;
 
 public class MainActivity extends AppCompatActivity {
 

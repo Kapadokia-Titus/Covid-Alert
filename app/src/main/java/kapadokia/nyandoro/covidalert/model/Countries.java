@@ -2,7 +2,7 @@ package kapadokia.nyandoro.covidalert.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Statistics {
+public class Countries {
 
     @SerializedName("updated")
     private Integer updated;
