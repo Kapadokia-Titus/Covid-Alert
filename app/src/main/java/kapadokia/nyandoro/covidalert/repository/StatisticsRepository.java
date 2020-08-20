@@ -17,6 +17,6 @@ public class StatisticsRepository {
 
     // fetching all countries
     public Single<Countries> modelSingleAllCountries(){
-        return statisticsService.getAllCountries();
+        return statisticsService.getByCountryName();
     }
 }
