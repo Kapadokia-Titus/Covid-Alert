@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface StatisticsService {
 
-    @GET("countries/:query?yesterday=true&strict=true&query =kenya")
+    @GET("/countries/:query?yesterday=true&strict=true")
     Single<Countries> getByCountryName();
 
     @GET("/countries?yesterday=&sort=")

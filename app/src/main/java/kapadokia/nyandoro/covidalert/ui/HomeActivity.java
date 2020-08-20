@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.util.Log;
 
 import javax.inject.Inject;
 
@@ -22,6 +23,8 @@ public class HomeActivity extends AppCompatActivity {
     @Inject
     ViewModelProvider.Factory viewModelFactory;
 
+    private static final String TAG = "HomeActivity";
+
     private StatisticsViewModel statisticsViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         statisticsViewModel.getCountriesMutableLiveData().observe(this, new Observer<Countries>() {
             @Override
             public void onChanged(Countries countries) {
-                binding.setCountry(countries);
+                Log.d("result", "onChanged: " + countries.getCountry());
             }
         });
     }
