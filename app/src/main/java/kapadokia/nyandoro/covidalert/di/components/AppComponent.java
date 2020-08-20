@@ -5,11 +5,11 @@ import javax.inject.Singleton;
 import dagger.Component;
 import kapadokia.nyandoro.covidalert.di.modules.ContextModule;
 import kapadokia.nyandoro.covidalert.di.modules.NetworkModule;
-import kapadokia.nyandoro.covidalert.ui.MainActivity;
+import kapadokia.nyandoro.covidalert.ui.HomeActivity;
 
 @Singleton
 @Component(modules = {NetworkModule.class, ContextModule.class})
 public interface AppComponent {
 
-    void inject(MainActivity mainActivity);
+    void inject(HomeActivity homeActivity);
 }
