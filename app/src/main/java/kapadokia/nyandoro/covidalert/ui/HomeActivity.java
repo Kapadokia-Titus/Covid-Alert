@@ -8,6 +8,9 @@ import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import kapadokia.nyandoro.covidalert.BaseApplication;
@@ -39,6 +42,9 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onChanged(Countries countries) {
                 Log.d("result", "onChanged: " + countries.getCountry());
+                List<Countries> country = new ArrayList<>();
+                country.add(countries);
+                binding.setCountries(country);
             }
         });
     }
