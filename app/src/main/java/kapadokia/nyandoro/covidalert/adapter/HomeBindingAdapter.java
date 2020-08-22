@@ -1,6 +1,7 @@
 package kapadokia.nyandoro.covidalert.adapter;
 
 import androidx.databinding.BindingAdapter;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,15 +9,17 @@ import java.util.List;
 
 import kapadokia.nyandoro.covidalert.model.Countries;
 import kapadokia.nyandoro.covidalert.repository.StatisticsRepository;
+import kapadokia.nyandoro.covidalert.repository.StatisticsRepository_Factory;
 
 public class HomeBindingAdapter {
 
     private static final String TAG = "HomeBindingAdapter";
 
     @BindingAdapter("countryList")
-    public static void setCountries(RecyclerView view,StatisticsRepository repository){
+    public static void setCountries(RecyclerView view, List<Countries> countries){
 
-        if (repository == null){
+
+        if (countries == null){
             return;
         }
 
@@ -28,7 +31,7 @@ public class HomeBindingAdapter {
 
         HomeAdapter adapter = (HomeAdapter) view.getAdapter();
         if (adapter==null){
-            adapter = new HomeAdapter(repository, view.getContext());
+            adapter = new HomeAdapter(countries, view.getContext());
             view.setAdapter(adapter);
         }
     }

@@ -31,15 +31,16 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
     private StatisticsRepository repository;
     private Context context;
+    private List<Countries> countries;
 
     private StatisticsViewModel statisticsViewModel;
 
     @Inject
-    private ViewModelProvider.Factory viewModelFactory;
+    ViewModelProvider.Factory viewModelFactory;
     // constructor
     @Inject
-    public HomeAdapter(StatisticsRepository repository, Context context){
-        this.repository =repository;
+    public HomeAdapter(List<Countries> countries, Context context){
+        this.countries =countries;
         this.context=context;
     }
 
@@ -71,13 +72,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             @Override
             public void onChanged(Countries countries) {
                 holder.binding.setCountry(countries);
+                holder.binding.executePendingBindings();
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return countries.size();
     }
 
 
